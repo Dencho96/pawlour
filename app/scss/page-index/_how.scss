@@ -1,0 +1,83 @@
+.how {
+    padding: 15px 0 20px;
+
+    &__title {
+        margin-bottom: 70px;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 52px;
+        text-align: center;
+    }
+
+    &__inner {
+        position: relative;
+        padding: 55px 0 135px;
+    }
+
+    &__img {
+        position: absolute;
+        top: 25px;
+        left: -150px;
+    }
+
+    &__list {
+        margin-left: auto;
+        max-width: 445px;
+        width: 100%;
+        counter-reset: count;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 95px;
+        counter-increment: count;
+
+        &+& {
+            margin-top: 40px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 74px;
+            height: 71px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &:nth-child(odd) {
+            &::before {
+                background-image: url('../images/icon-paw-blue.png');
+            }
+        }
+
+        &:nth-child(even) {
+            &::before {
+                background-image: url('../images/icon-paw-orange.png');
+            }
+        }
+
+        &::after {            
+            content: counter(count);
+            position: absolute;
+            top: 54px;
+            left: 35px;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+
+    &__descr {
+        margin-bottom: 17px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    &__text {
+        color: $gray;
+    }
+}

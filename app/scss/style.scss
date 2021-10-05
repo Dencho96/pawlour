@@ -1,3 +1,12 @@
 @import 'fonts';
 @import 'vars';
+@import 'mixins';
 @import 'global';
+
+
+// import components
+@import 'components/header';
+
+// import page-index
+@import 'page-index/hero';
+@import 'page-index/how';
