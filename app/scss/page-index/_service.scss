@@ -1,0 +1,42 @@
+.service {
+
+    &__inner {
+        align-items: center;
+    }
+
+    &__box {
+        max-width: 340px;
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        font-size: 48px;
+        line-height: 60px;
+        font-weight: 700;
+        color: $black;
+    }
+
+    &__text {
+        margin-bottom: 145px;
+        color: $gray;
+    }
+
+    &__link {
+        min-width: 240px;
+    }
+
+    &__img-wrapper {
+        position: relative;
+        line-height: 0;
+    }
+
+    &__img-side {
+        position: absolute;
+        right: -112%;
+        top: 50%;
+        transform: translateY(-55%);
+        z-index: -1;
+    }
+}
