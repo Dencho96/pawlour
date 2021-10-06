@@ -1,0 +1,92 @@
+.footer {
+    padding: 55px 0 135px;
+    background-color: $black;
+
+    &__inner {
+        justify-content: space-between;
+    }
+
+    &__col {
+        color: #fcfcfc;        
+    }
+
+    &__logo {
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    &__col-title {
+        margin-bottom: 8px;
+        font-size: 24px;
+        line-height: 60px;
+        font-weight: 500;
+    }
+
+    &__item {
+        &+& {
+            margin-top: 16px;
+        }
+    }
+
+    &__link {
+        font-family: "Open Sans";
+        transition: color 0.2s;
+
+        &:hover {
+            color: $orange;
+        }
+        
+        &--email, &--phone {
+            position: relative;
+            padding-left: 32px;
+            font-family: "Myriad Pro";
+            font-size: 16px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                top: 0;
+                left: 0;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+
+        &--email {
+            &::before {
+                background-image: url('../images/icon-email.png');
+            }
+        }
+        
+        &--phone {
+            &::before {
+                background-image: url('../images/icon-phone.png');
+            }
+        }
+    }
+
+    &__address {
+        margin-bottom: 28px;
+        font-style: normal;
+    }
+
+    &__item {
+        &+& {
+            margin-top: 30px;
+        }
+    }
+
+    &__social-list {
+        justify-content: space-between;
+        max-width: 140px;
+        width: 100%;
+    }
+
+    &__social-link {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
