@@ -1,0 +1,71 @@
+.reasons {
+    padding: 15px 0 20px;
+
+    &__title {
+        margin-bottom: 70px;
+        font-size: 48px;
+        line-height: 52px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__inner {
+        position: relative;
+        padding: 153px 0 190px;
+    }
+
+    &__img {
+        position: absolute;
+        top: -55px;
+        left: -150px;
+    }
+
+    &__list{
+        margin-left: auto;
+        max-width: 470px;
+        width: 100%;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 84px;
+        color: $black;
+        font-weight: 600;
+        font-size: 24px;
+
+        &+& {
+            margin-top: 92px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 64px;
+            height: 64px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &:nth-child(1) {
+            &::before {
+                background-image: url('../images/icon-reason-1.png');
+            }
+        }
+
+        &:nth-child(2) {
+            &::before {
+                background-image: url('../images/icon-reason-2.png');
+            }
+        }
+
+        &:nth-child(3) {
+            &::before {
+                background-image: url('../images/icon-reason-3.png');
+            }
+        }
+    }
+}

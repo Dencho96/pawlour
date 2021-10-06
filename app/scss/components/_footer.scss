@@ -73,12 +73,6 @@
         font-style: normal;
     }
 
-    &__item {
-        &+& {
-            margin-top: 30px;
-        }
-    }
-
     &__social-list {
         justify-content: space-between;
         max-width: 140px;

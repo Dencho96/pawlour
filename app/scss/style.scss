@@ -8,6 +8,7 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/social';
+@import 'components/form';
 
 // import page-index
 @import 'page-index/hero';
@@ -15,3 +16,9 @@
 @import 'page-index/service';
 @import 'page-index/subscribe';
 @import 'page-index/slogan';
+
+//import page-groomer
+@import 'page-groomer/hero';
+@import 'page-groomer/reasons';
+@import 'page-groomer/register.scss';
+@import 'page-groomer/features.scss';

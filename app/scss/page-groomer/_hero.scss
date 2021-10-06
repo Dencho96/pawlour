@@ -1,10 +1,10 @@
-.hero {
+.groomer-hero {
     height: 940px;
     background-color: aqua;
     background-image: url('../images/hero-bottom.png');
     background-repeat: no-repeat;
-    background-position: bottom -10px center, bottom -50px center;
-    background-size: contain, cover;
+    background-size: contain;
+    background-position: bottom -10px center;
 
     &__container {
         position: relative;
@@ -56,7 +56,7 @@
     }
 
     &__social-item {
-        &+& {
+        &+&{
             margin-top: 23px;
         }
     }
