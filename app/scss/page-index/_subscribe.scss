@@ -8,11 +8,31 @@
     &__inner {
         justify-content: space-between;
         align-items: center;
+
+        @include maxw992 {
+            flex-direction: column;
+        }
+    }
+
+    &__img {
+        @include maxw992 {
+            max-width: 350px;
+            width: 100%;
+            order: 2;
+        }
     }
 
     &__box {
         max-width: 480px;
         width: 100%;
+
+        @include maxw992 {
+            margin-bottom: 50px;
+        }
+
+        @include maxw576 {
+            margin-bottom: 35px;
+        }
     }
 
     &__title {
@@ -22,6 +42,15 @@
         font-weight: 700;
         color: $black;
         text-transform: uppercase;
+
+        @include maxw992 {
+            text-align: center;
+        }
+
+        @include maxw576 {
+            font-size: 42px;
+            line-height: 46px;
+        }
     }
 
     &__text {

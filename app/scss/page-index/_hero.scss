@@ -1,9 +1,9 @@
 .hero {
     position: relative;
     height: 940px;
-    background-image: url('../images/hero-bg.jpg');
+    background-image: url('../images/home-hero-bg.jpg'), url('../images/stamp.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center, right;
     background-size: cover;
 
     &::before {
@@ -17,6 +17,19 @@
         background-repeat: no-repeat;
         background-position: bottom -135px center;
         background-size: cover;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 10%;
+        right: 25px;
+        width: 160px;
+        height: 160px;
+        background-image: url('../../images/stamp.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     &__container {
@@ -39,9 +52,12 @@
         max-width: 1240px;
         width: 100%;
         color: white;
+        z-index: 15;
         
         @include maxw992 {
-            position: static;
+            // position: static;
+            top: 95px;
+            left: 0;
             transform: translateX(0);
             flex-direction: column;
         }
@@ -52,6 +68,15 @@
         bottom: 40%;
         justify-content: space-between;
         width: 100%;
+        z-index: 10;
+
+        @include maxw992 {
+            flex-direction: column;
+        }
+
+        @include maxw768 {
+            bottom: 35%;
+        }
     }
 
     &__title-part {
@@ -64,6 +89,7 @@
         @include maxw992 {
             font-size: 100px;
             line-height: 104px;
+            text-align: center;
         }
 
         @include maxw768 {
@@ -81,10 +107,20 @@
         max-width: 275px;
         width: 100%;
         color: white;
+
+        @include maxw992 {
+            margin-bottom: 35px;
+        }
     }
 
     &__text {
         margin-bottom: 42px;
+
+        @include maxw768 {
+            padding: 15px;
+            border-radius: 28px;
+            background-color: rgba(black, 0.5);
+        }
     }
 
     &__link {
@@ -93,15 +129,48 @@
 
     &__social {
         padding-right: 30px;
+
+        @include maxw992 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 240px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 28px;
+            background-color: rgba(black, 0.4);
+        }
     }
 
     &__social-list {
         flex-direction: column;
+
+        @include maxw992 {
+            flex-direction: row;
+        }
     }
 
     &__social-item {
         &+& {
             margin-top: 23px;
+
+            @include maxw992 {
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+                margin-left: 35px;
+            }
+        }
+    }
+
+    &__img {
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+        transform: translateX(-40%);
+
+        @include maxw992 {
+            width: 100%;
         }
     }
 }

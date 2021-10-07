@@ -7,17 +7,49 @@
         font-weight: 700;
         line-height: 52px;
         text-align: center;
+
+        @include maxw992 {
+            margin-bottom: 55px;
+        }
+
+        @include maxw576 {
+            margin-bottom: 15px;
+            font-size: 40px;
+            line-height: 44px;
+        }
     }
 
     &__inner {
         position: relative;
         padding: 55px 0 135px;
+        
+        @include maxw1200 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 0 135px;
+        }
+
+        @include maxw576 {
+            padding: 0 0 25px;
+        }
     }
 
     &__img {
         position: absolute;
         top: 25px;
         left: -150px;
+
+        @include maxw1200 {
+            position: static;
+            width: 50%;
+            margin-bottom: 40px;
+        }
+
+        @include maxw992 {
+            width: 70%;
+            margin-bottom: 25px;
+        }
     }
 
     &__list {
@@ -25,6 +57,10 @@
         max-width: 445px;
         width: 100%;
         counter-reset: count;
+
+        @include maxw1200 {
+            margin-left: 0;
+        }
     }
 
     &__item {
@@ -75,9 +111,19 @@
         margin-bottom: 17px;
         font-size: 24px;
         font-weight: 600;
+
+        @include maxw576 {
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
 
     &__text {
         color: $gray;
+
+        @include maxw576 {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 }

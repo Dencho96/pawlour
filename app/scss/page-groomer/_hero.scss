@@ -1,33 +1,67 @@
 .groomer-hero {
+    position: relative;
     height: 940px;
     background-color: aqua;
-    background-image: url('../images/hero-bottom.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom -10px center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 162px;
+        width: 105vw;
+        background-image: url('../images/hero-bottom.png');
+        background-repeat: no-repeat;
+        background-position: bottom -135px center;
+        background-size: cover;
+    }
 
     &__container {
         position: relative;
         height: 100%;
         align-items: center;
+
+        @include maxw992 {
+            padding-top: 95px;
+        }
     }
 
     &__title-wrapper {
         position: absolute;
-        top: 25%;
+        top: 20%;
         left: 50%;
         transform: translateX(-50%);
         justify-content: space-between;
+        padding: 0 15px;
         max-width: 1240px;
         width: 100%;
         color: white;
+        z-index: 15;
+        
+        @include maxw992 {
+            // position: static;
+            top: 95px;
+            left: 0;
+            transform: translateX(0);
+            flex-direction: column;
+        }
     }
 
     &__inner {
         position: absolute;
         bottom: 40%;
         justify-content: space-between;
+        max-width: 1205px;
         width: 100%;
+        z-index: 10;
+
+        @include maxw992 {
+            flex-direction: column;
+        }
+
+        @include maxw768 {
+            bottom: 35%;
+        }
     }
 
     &__title-part {
@@ -35,29 +69,80 @@
         text-transform: uppercase;
         font-size: 120px;
         font-weight: 500;
+
+        @include maxw992 {
+            font-size: 100px;
+            line-height: 104px;
+            text-align: center;
+        }
+
+        @include maxw768 {
+            font-size: 82px;
+            line-height: 86px;
+        }
+
+        @include maxw576 {
+            font-size: 72px;
+            line-height: 76px;
+        }
     }
 
     &__box {
         max-width: 275px;
         width: 100%;
         color: white;
+
+        @include maxw992 {
+            margin-bottom: 35px;
+        }
     }
 
     &__text {
         margin-bottom: 42px;
+
+        @include maxw768 {
+            padding: 15px;
+            border-radius: 28px;
+            background-color: rgba(black, 0.5);
+        }
     }
 
     &__link {
         min-width: 240px;
     }
 
+    &__social {
+        padding-right: 30px;
+
+        @include maxw992 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 240px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 28px;
+            background-color: rgba(black, 0.4);
+        }
+    }
+
     &__social-list {
         flex-direction: column;
+        @include maxw992 {
+            flex-direction: row;
+        }
     }
 
     &__social-item {
         &+&{
             margin-top: 23px;
+
+            @include maxw992 {
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+                margin-left: 35px;
+            }
         }
     }
 }
