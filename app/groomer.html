@@ -14,7 +14,10 @@
         <div class="container">
             <div class="header__inner d-flex">
                 <a class="logo" href="#">
-                    <img class="header__img" src="images/logo.png" alt="">
+                    <picture class="logo__container">
+                        <source srcset="images/logo-mob.png" media="(max-width: 768px)">
+                        <img class="logo__img" src="images/logo.png" alt="">
+                    </picture>
                 </a>
                 <a class="btn header__link" href="index.html">I'm a Pet Owner</a>
             </div>
@@ -118,7 +121,7 @@
                         </div>
                         <img class="features__img" src="images/features-rating.png" alt="Pawlour Groomer Calendar">
                     </div>
-                    <div class="features__item d-flex">                        
+                    <div class="features__item d-flex">
                         <img class="features__img" src="images/features-calendar.png" alt="Pawlour Groomer Calendar">
                         <div class="features__box">
                             <div class="features__title">

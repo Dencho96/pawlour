@@ -1,26 +1,50 @@
 .hero {
+    position: relative;
     height: 940px;
-    background-color: aqua;
-    background-image: url('../images/hero-bottom.png');
+    background-image: url('../images/hero-bg.jpg');
     background-repeat: no-repeat;
-    background-position: bottom -10px center, bottom -50px center;
-    background-size: contain, cover;
+    background-position: center;
+    background-size: cover;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 162px;
+        width: 105vw;
+        background-image: url('../images/hero-bottom.png');
+        background-repeat: no-repeat;
+        background-position: bottom -135px center;
+        background-size: cover;
+    }
 
     &__container {
         position: relative;
         height: 100%;
         align-items: center;
+
+        @include maxw992 {
+            padding-top: 95px;
+        }
     }
 
     &__title-wrapper {
         position: absolute;
-        top: 25%;
+        top: 20%;
         left: 50%;
         transform: translateX(-50%);
         justify-content: space-between;
+        padding: 0 15px;
         max-width: 1240px;
         width: 100%;
         color: white;
+        
+        @include maxw992 {
+            position: static;
+            transform: translateX(0);
+            flex-direction: column;
+        }
     }
 
     &__inner {
@@ -35,6 +59,22 @@
         text-transform: uppercase;
         font-size: 120px;
         font-weight: 500;
+        line-height: 124px;
+
+        @include maxw992 {
+            font-size: 100px;
+            line-height: 104px;
+        }
+
+        @include maxw768 {
+            font-size: 82px;
+            line-height: 86px;
+        }
+
+        @include maxw576 {
+            font-size: 72px;
+            line-height: 76px;
+        }
     }
 
     &__box {
@@ -49,6 +89,10 @@
 
     &__link {
         min-width: 240px;
+    }
+
+    &__social {
+        padding-right: 30px;
     }
 
     &__social-list {

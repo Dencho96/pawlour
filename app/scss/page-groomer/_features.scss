@@ -1,9 +1,20 @@
 .features {
+    position: relative;
     padding: 105px 0 203px;
-    background-image: url('../images/slogan-bg-bottom.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -55px;
+        width: 140%;
+        height: 185px;
+
+        background-image: url('../images/slogan-bg-bottom.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center 35px;
+    }
 
     &__item {
         justify-content: space-between;

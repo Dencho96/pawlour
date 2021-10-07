@@ -14,5 +14,9 @@
     &__link {
         min-width: 240px;
         color: $orange;
+
+        @include maxw768 {
+            min-width: 180px;
+        }
     }
 }

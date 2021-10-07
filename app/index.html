@@ -14,7 +14,10 @@
         <div class="container">
             <div class="header__inner d-flex">
                 <a class="logo" href="groomer.html">
-                    <img class="header__img" src="images/logo.png" alt="">
+                    <picture class="logo__container">
+                        <source srcset="images/logo-mob.png" media="(max-width: 768px)">
+                        <img class="logo__img" src="images/logo.png" alt="">
+                    </picture>
                 </a>
                 <a class="btn header__link" href="groomer.html">I'm a groomer</a>
             </div>
@@ -42,7 +45,7 @@
                             Join The Waitlist
                         </a>
                     </div>
-                    <div class="social">
+                    <div class="social hero__social">
                         <ul class="social__list hero__social-list d-flex">
                             <li class="social__item hero__social-item">
                                 <a class="social__link" href="#" style="background-image: url('images/facebook.svg');"></a>
