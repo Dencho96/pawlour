@@ -1,10 +1,16 @@
 .hero {
     position: relative;
     height: 940px;
-    background-image: url('../images/home-hero-bg.jpg'), url('../images/stamp.png');
+    background-image: url('../images/home-hero-bg.jpg');
     background-repeat: no-repeat;
-    background-position: center, right;
+    background-position: center;
     background-size: cover;
+    
+
+    @include maxw992 {
+        background-image: none;
+        background: linear-gradient(90deg, rgba(133,220,240,1) 28%, rgba(106,206,226,1) 100%)
+    }
 
     &::before {
         content: "";
@@ -17,19 +23,10 @@
         background-repeat: no-repeat;
         background-position: bottom -135px center;
         background-size: cover;
-    }
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 10%;
-        right: 25px;
-        width: 160px;
-        height: 160px;
-        background-image: url('../../images/stamp.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        @include maxw992 {
+            background-position: bottom -2px center;
+        }
     }
 
     &__container {
@@ -39,6 +36,24 @@
 
         @include maxw992 {
             padding-top: 95px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: 25px;
+            width: 160px;
+            height: 160px;
+            background-image: url('../images/stamp.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+
+            @include maxw992 {
+                bottom: 27%;
+            }
         }
     }
 
@@ -53,7 +68,7 @@
         width: 100%;
         color: white;
         z-index: 15;
-        
+
         @include maxw992 {
             // position: static;
             top: 95px;
@@ -65,17 +80,19 @@
 
     &__inner {
         position: absolute;
-        bottom: 40%;
+        bottom: 37%;
         justify-content: space-between;
         width: 100%;
         z-index: 10;
 
         @include maxw992 {
             flex-direction: column;
+            bottom: 35%;
         }
 
         @include maxw768 {
-            bottom: 35%;
+            left: 0;
+            align-items: center;
         }
     }
 
@@ -125,6 +142,10 @@
 
     &__link {
         min-width: 240px;
+
+        @include maxw768 {
+            display: block;
+        }
     }
 
     &__social {
@@ -138,7 +159,7 @@
             width: 100%;
             padding: 10px;
             border-radius: 28px;
-            background-color: rgba(black, 0.4);
+            background-color: rgba($black, 0.4);
         }
     }
 
@@ -168,9 +189,28 @@
         bottom: -5%;
         left: 50%;
         transform: translateX(-40%);
+        z-index: 2;
 
         @include maxw992 {
-            width: 100%;
+            width: 75%;
+            bottom: -9%;
+            left: 45%;
+        }
+
+        @include maxw768 {
+            bottom: -3%;
+        }
+
+        @include maxw576 {
+            bottom: 1%;
+        }
+
+        @include maxw450 {
+            width: 90%;
+        }
+
+        @include maxw380 {
+            bottom: 4%;
         }
     }
 }

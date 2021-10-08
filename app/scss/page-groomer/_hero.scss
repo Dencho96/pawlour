@@ -1,7 +1,14 @@
 .groomer-hero {
     position: relative;
     height: 940px;
-    background-color: aqua;
+    background-image: url('../images/groomer-hero-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include minw2175 {
+        background-position: top center;
+    }
 
     &::before {
         content: "";
@@ -12,7 +19,7 @@
         width: 105vw;
         background-image: url('../images/hero-bottom.png');
         background-repeat: no-repeat;
-        background-position: bottom -135px center;
+        background-position: bottom -81px center;
         background-size: cover;
     }
 
@@ -23,6 +30,24 @@
 
         @include maxw992 {
             padding-top: 95px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: 25px;
+            width: 160px;
+            height: 160px;
+            background-image: url('../images/stamp.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+
+            @include maxw992 {
+                bottom: 27%;
+            }
         }
     }
 
@@ -39,7 +64,6 @@
         z-index: 15;
         
         @include maxw992 {
-            // position: static;
             top: 95px;
             left: 0;
             transform: translateX(0);
@@ -49,7 +73,7 @@
 
     &__inner {
         position: absolute;
-        bottom: 40%;
+        bottom: 37%;
         justify-content: space-between;
         max-width: 1205px;
         width: 100%;
@@ -57,10 +81,12 @@
 
         @include maxw992 {
             flex-direction: column;
+            bottom: 35%;
         }
 
         @include maxw768 {
-            bottom: 35%;
+            left: 0;
+            align-items: center;
         }
     }
 
@@ -109,6 +135,10 @@
 
     &__link {
         min-width: 240px;
+
+        @include maxw768 {
+            display: block;
+        }
     }
 
     &__social {
@@ -143,6 +173,31 @@
                 margin-top: 0;
                 margin-left: 35px;
             }
+        }
+    }
+
+    &__img {
+        position: absolute;
+        bottom: -2%;
+        left: 55%;
+        z-index: 2;
+        transform: translateX(-50%) rotateZ(-12deg);
+        
+        max-width: 405px;
+        width: 100%;
+
+        @include maxw1770 {
+            bottom: -5%;
+        }
+
+        @include maxw1470 {
+            bottom: -6%;
+            width: 100%;
+        }
+
+        @include maxw992 {
+            bottom: -5%;
+            max-width: 350px;
         }
     }
 }
