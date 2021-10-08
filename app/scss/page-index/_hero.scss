@@ -70,7 +70,6 @@
         z-index: 15;
 
         @include maxw992 {
-            // position: static;
             top: 95px;
             left: 0;
             transform: translateX(0);
