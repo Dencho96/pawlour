@@ -53,6 +53,9 @@ body {
     text-transform: uppercase;
     text-align: center;
     transition: opacity 0.2s;
+    border: none;
+    cursor: pointer;
+    outline: transparent;
 
     &--orange {
         background-color: $orange;
